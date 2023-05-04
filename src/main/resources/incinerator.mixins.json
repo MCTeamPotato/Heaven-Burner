@@ -1,0 +1,13 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "com.teampotato.incinerator.mixin",
+    "compatibilityLevel": "JAVA_8",
+    "refmap": "incinerator.refmap.json",
+    "client": [
+        "MixinMinecraftPlayerRenderer"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}
