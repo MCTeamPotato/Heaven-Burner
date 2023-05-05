@@ -42,7 +42,7 @@ public class Incinerator {
             matrixStackIn.translate(0.0D, 0.001D, 0.0D);
             matrixStackIn.scale(f3 * 0.05F, f3 * 0.05F, f3 * 0.05F);
             matrixStackIn.mulPose(Vector3f.ZP.rotationDegrees(180.0F));
-            matrixStackIn.mulPose(Vector3f.ZP.rotationDegrees(90.0F + f2));
+            matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(90.0F + f2));
             MatrixStack.Entry entry = matrixStackIn.last();
             Matrix4f matrix4f = entry.pose();
             Matrix3f matrix3f = entry.normal();
