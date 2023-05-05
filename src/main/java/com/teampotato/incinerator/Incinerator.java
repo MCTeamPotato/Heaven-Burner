@@ -20,11 +20,11 @@ public class Incinerator {
     public static final String ID = "incinerator";
     private static final ResourceLocation SIGIL = new ResourceLocation("cataclysm:textures/entity/soul_flame_strike_sigil.png");
 
-    private static void drawVertex(Matrix4f matrix4f, Matrix3f matrix3f, IVertexBuilder builder, int p_229039_4_, int p_229039_6_, float p_229039_7_, float p_229039_8_) {
+    private static void drawVertex(Matrix4f matrix4f, Matrix3f matrix3f, IVertexBuilder builder, int pX, int pZ, float U, float V) {
         builder
-                .vertex(matrix4f, p_229039_4_, 0, p_229039_6_)
+                .vertex(matrix4f, pX, 0, pZ)
                 .color(255, 255, 255, 255)
-                .uv(p_229039_7_, p_229039_8_)
+                .uv(U, V)
                 .overlayCoords(OverlayTexture.NO_OVERLAY)
                 .uv2(240)
                 .normal(matrix3f, 1, 1, 0)

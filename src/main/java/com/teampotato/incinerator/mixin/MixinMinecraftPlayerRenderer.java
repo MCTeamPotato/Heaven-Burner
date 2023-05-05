@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(PlayerRenderer.class)
 public abstract class MixinMinecraftPlayerRenderer {
     @Inject(method = "render(Lnet/minecraft/client/entity/player/AbstractClientPlayerEntity;FFLcom/mojang/blaze3d/matrix/MatrixStack;Lnet/minecraft/client/renderer/IRenderTypeBuffer;I)V", at = @At("HEAD"))
-    private void onRender(AbstractClientPlayerEntity player, float p_225623_2_, float p_225623_3_, MatrixStack matrixStackIn, IRenderTypeBuffer buffer, int p_225623_6_, CallbackInfo ci) {
-        Incinerator.renderPlayerWithIncinerator(player, matrixStackIn, buffer, p_225623_3_);
+    private void onRender(AbstractClientPlayerEntity pEntity, float pEntityYaw, float pPartialTicks, MatrixStack pMatrixStack, IRenderTypeBuffer pBuffer, int pPackedLight, CallbackInfo ci) {
+        Incinerator.renderPlayerWithIncinerator(pEntity, pMatrixStack, pBuffer, pPartialTicks);
     }
 }
