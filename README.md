@@ -5,3 +5,5 @@ This mod backports the soul flame strike sigil that appears at the bottom of pla
 Require Cataclysm.
 
 Permission from Cataclysm dev: See [here](https://discord.com/channels/915989249432641647/916135612992618507/1103636015417151549) (Cataclysm Discord)
+
+Download: See [Releases](https://github.com/MCTeamPotato/Heaven-Burner/releases)
