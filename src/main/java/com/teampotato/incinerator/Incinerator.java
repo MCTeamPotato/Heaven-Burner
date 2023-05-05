@@ -20,22 +20,22 @@ public class Incinerator {
     public static final String ID = "incinerator";
     private static final ResourceLocation SIGIL = new ResourceLocation("cataclysm:textures/entity/soul_flame_strike_sigil.png");
 
-    private static void drawVertex(Matrix4f matrix4f, Matrix3f matrix3f, IVertexBuilder builder, int pX, int pZ, float U, float V) {
+    private static void drawVertex(Matrix4f matrix4f, Matrix3f matrix3f, IVertexBuilder builder, int pX, int pZ, float pU, float pV) {
         builder
                 .vertex(matrix4f, pX, 0, pZ)
                 .color(255, 255, 255, 255)
-                .uv(U, V)
+                .uv(pU, pV)
                 .overlayCoords(OverlayTexture.NO_OVERLAY)
                 .uv2(240)
                 .normal(matrix3f, 1, 1, 0)
                 .endVertex();
     }
 
-    public static void renderPlayerWithIncinerator(AbstractClientPlayerEntity player, MatrixStack matrixStackIn, IRenderTypeBuffer buffer, float p_225623_3_) {
+    public static void renderPlayerWithIncinerator(AbstractClientPlayerEntity player, MatrixStack matrixStackIn, IRenderTypeBuffer buffer, float pPartialTicks) {
         ResourceLocation item = player.getMainHandItem().getItem().getRegistryName();
         if (player.isUsingItem() && item != null && item.equals(ModItems.THE_INCINERATOR.get().getRegistryName())) {
             int i = player.getTicksUsingItem();
-            float f2 = player.tickCount + p_225623_3_;
+            float f2 = player.tickCount + pPartialTicks;
             float f3 = MathHelper.clamp(i, 1, 60);
             matrixStackIn.pushPose();
             IVertexBuilder builder = ItemRenderer.getArmorFoilBuffer(buffer, CMRenderTypes.getGlowingEffect(SIGIL), false, true);
