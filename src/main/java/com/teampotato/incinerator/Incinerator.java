@@ -18,7 +18,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod(Incinerator.ID)
 public class Incinerator {
     public static final String ID = "incinerator";
-    private static final ResourceLocation SIGIL = new ResourceLocation("cataclysm:textures/entity/soul_flame_strike_sigil.png");
+    private static final ResourceLocation FLAME = new ResourceLocation("cataclysm:textures/entity/soul_flame_strike_sigil.png");
 
     private static void drawVertex(Matrix4f matrix4f, Matrix3f matrix3f, IVertexBuilder builder, int pX, int pZ, float pU, float pV) {
         builder
@@ -38,7 +38,7 @@ public class Incinerator {
             float f2 = pEntity.tickCount + pPartialTicks;
             float f3 = MathHelper.clamp(i, 1, 60);
             pMatrixStack.pushPose();
-            IVertexBuilder builder = ItemRenderer.getArmorFoilBuffer(pBuffer, CMRenderTypes.getGlowingEffect(SIGIL), false, true);
+            IVertexBuilder builder = ItemRenderer.getArmorFoilBuffer(pBuffer, CMRenderTypes.getGlowingEffect(FLAME), false, true);
             pMatrixStack.translate(0.0D, 0.001D, 0.0D);
             pMatrixStack.scale(f3 * 0.05F, f3 * 0.05F, f3 * 0.05F);
             pMatrixStack.mulPose(Vector3f.ZP.rotationDegrees(180.0F));
